@@ -108,6 +108,7 @@ p{margin:0}
 .hero h1{font-size:clamp(32px,3vw,50px);line-height:1.06;font-weight:300}
 .hero-sub{font-size:clamp(16px,1.35vw,18.5px);max-width:46ch;color:var(--fog)}
 .hero-ctas{display:flex;gap:12px;flex-wrap:wrap}
+@media (max-width:560px){.hero-ctas{flex-direction:column}.hero-ctas .btn{justify-content:center}}
 .hero .anim{animation:rise 1s cubic-bezier(.2,.7,.2,1) both}
 .hero .anim:nth-child(2){animation-delay:.12s}.hero .anim:nth-child(3){animation-delay:.24s}.hero .anim:nth-child(4){animation-delay:.36s}
 @keyframes rise{from{transform:translateY(18px);opacity:0}to{transform:none;opacity:1}}
@@ -120,7 +121,7 @@ p{margin:0}
 .spot b{white-space:nowrap;font-weight:400;padding:5px 8px;background:rgba(9,9,10,.6);border:1px solid var(--line-strong);backdrop-filter:blur(6px)}
 @keyframes ping{0%{transform:scale(.6);opacity:1}100%{transform:scale(1.8);opacity:0}}
 .indicators{position:relative;z-index:2;border-top:1px solid var(--line);background:rgba(9,9,10,.6);backdrop-filter:blur(8px)}
-.indicators ul{list-style:none;margin:0 auto;padding:0;display:grid;grid-template-columns:repeat(4,1fr)}
+.indicators ul{list-style:none;display:grid;grid-template-columns:repeat(4,1fr)}
 .indicators li{display:flex;align-items:center;gap:12px;padding:22px 0;font-size:14px;color:var(--white);border-left:1px solid var(--line);padding-left:22px}
 .indicators li:first-child{border-left:0;padding-left:0}
 .indicators svg{width:18px;height:18px;flex:none;stroke:var(--steel)}
