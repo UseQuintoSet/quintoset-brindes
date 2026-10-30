@@ -5,11 +5,11 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Brindes corporativos premium | 5Set</title>
 <meta name="description" content="Crie kits e brindes personalizados que valorizam sua marca. Soluções completas para clientes, equipes, eventos e ações corporativas.">
-<link rel="canonical" href="https://www.usequintoset.com.br/brindes/">
+<link rel="canonical" href="https://www.usequintoset.com.br/brindes">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="pt_BR">
 <meta property="og:site_name" content="5Set">
-<meta property="og:url" content="https://www.usequintoset.com.br/brindes/">
+<meta property="og:url" content="https://www.usequintoset.com.br/brindes">
 <meta property="og:title" content="Brindes corporativos premium | 5Set">
 <meta property="og:description" content="Crie kits e brindes personalizados que valorizam sua marca. Soluções completas para clientes, equipes, eventos e ações corporativas.">
 <meta property="og:image" content="https://www.usequintoset.com.br/brindes/img/og-image.jpg">
@@ -335,7 +335,7 @@ footer{border-top:1px solid var(--line);padding-block:56px 40px}
 
 <header class="nav" id="nav">
   <div class="wrap nav-in">
-    <a class="brand" href="#topo" aria-label="5Set — início"><img src="/brindes/img/logo.png" alt="5Set. Win the mind game"></a>
+    <a class="brand" href="/brindes" aria-label="5Set — início"><img src="/brindes/img/logo.png" alt="5Set. Win the mind game"></a>
     <ul class="nav-links">
       <li><a href="#produtos">Produtos</a></li>
       <li><a href="#solucoes">Soluções</a></li>
@@ -358,7 +358,7 @@ footer{border-top:1px solid var(--line);padding-block:56px 40px}
   </div>
 </header>
 
-<main id="topo">
+<main>
 <!-- HERO -->
 <section class="hero">
   <div class="hero-media">
@@ -660,6 +660,12 @@ footer{border-top:1px solid var(--line);padding-block:56px 40px}
   });
   menu.addEventListener('click',function(e){ if(e.target.closest('a')){ menu.hidden=true; burger.setAttribute('aria-expanded','false'); burger.setAttribute('aria-label','Abrir menu'); }});
   window.addEventListener('resize',function(){ if(window.innerWidth>960 && !menu.hidden){menu.hidden=true;burger.setAttribute('aria-expanded','false');} });
+
+  // Logo: scroll to top in place and drop any #section from the URL. Modifier clicks still open a new tab.
+  document.querySelector('.brand').addEventListener('click',function(e){
+    if(e.metaKey||e.ctrlKey||e.shiftKey||e.button) return;
+    e.preventDefault(); history.replaceState(null,'',location.pathname+location.search); window.scrollTo(0,0);
+  });
 
   // Hotspots: positioned in image coordinates, mapped through object-fit: cover.
   var media=document.querySelector('.hero-media'), himg=media.querySelector('img'), spots=[].slice.call(media.querySelectorAll('.spot'));
