@@ -12,10 +12,10 @@
 <meta property="og:url" content="https://www.usequintoset.com.br/brindes/">
 <meta property="og:title" content="Brindes corporativos premium | 5Set">
 <meta property="og:description" content="Kits e brindes corporativos premium para onboarding, clientes e fim de ano. Design, personalização e entrega para empresas.">
-<meta property="og:image" content="https://www.usequintoset.com.br/brindes/img/hero-kits.jpg">
+<meta property="og:image" content="https://www.usequintoset.com.br/brindes/img/hero-linha-2.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&family=Manrope:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@125,200;125,300;125,400;125,500&family=Hanken+Grotesk:wght@400;500;600&family=Martian+Mono:wght@300;400;500&display=swap">
 <style>
 /* Layout: black editorial canvas, 12-col grid with hairline rules; one light "workshop" band for the process; brushed-metal type as the single bold gesture. */
 :root{
@@ -32,9 +32,9 @@
   --paper-mute:#5d5e63;
   --paper-line:rgba(20,20,22,.14);
   --metal:linear-gradient(100deg,#f7f7f8 0%,#a9abb2 38%,#eeeef0 55%,#8c8e95 78%,#dcdde0 100%);
-  --f-display:"Poppins","Helvetica Neue",Arial,sans-serif;
-  --f-body:"Manrope","Segoe UI",system-ui,sans-serif;
-  --f-mono:"IBM Plex Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
+  --f-display:"Archivo","Helvetica Neue",Arial,sans-serif;
+  --f-body:"Hanken Grotesk","Segoe UI",system-ui,sans-serif;
+  --f-mono:"Martian Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
   --maxw:1320px;
   --gut-l:max(20px, env(safe-area-inset-left,0px));
   --gut-r:max(20px, env(safe-area-inset-right,0px));
@@ -47,11 +47,11 @@ body{margin:0;background:var(--ink);color:var(--fog);font-family:var(--f-body);f
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--ink)}
 img{max-width:100%;display:block}
 a{color:inherit}
-h1,h2,h3{font-family:var(--f-display);font-weight:300;color:var(--white);margin:0;text-wrap:balance;letter-spacing:-.02em}
+h1,h2,h3{font-family:var(--f-display);font-stretch:125%;font-weight:300;color:var(--white);margin:0;text-wrap:balance;letter-spacing:-.025em}
+.mobile-menu li a,.concept .statement,.quote,.mq-track{font-stretch:125%}
 p{margin:0}
 .wrap{max-width:var(--maxw);margin:0 auto;padding-left:var(--gut-l);padding-right:var(--gut-r)}
-.eyebrow{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--steel);display:flex;align-items:center;gap:12px}
-.eyebrow::before{content:"";width:28px;height:1px;background:var(--line-strong)}
+.eyebrow{font-family:var(--f-mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--steel);display:flex;align-items:center;gap:12px}
 .metal{background:var(--metal);-webkit-background-clip:text;background-clip:text;color:transparent}
 :focus-visible{outline:1.5px solid var(--white);outline-offset:3px;border-radius:2px}
 
@@ -63,6 +63,7 @@ p{margin:0}
 .btn-solid:hover{background:#d9dadd}
 .btn-ghost{border-color:var(--line-strong);color:var(--white);background:transparent}
 .btn-ghost:hover{border-color:var(--white)}
+.hero .btn-ghost{background:rgba(9,9,10,.55);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
 
 /* NAV */
 .nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(9,9,10,.72);backdrop-filter:saturate(140%) blur(14px);-webkit-backdrop-filter:saturate(140%) blur(14px);border-bottom:1px solid transparent;transition:border-color .3s,background .3s}
@@ -90,15 +91,14 @@ p{margin:0}
 
 /* HERO */
 .hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
-.hero-media{position:absolute;top:0;right:0;bottom:0;width:74%;
-  -webkit-mask-image:linear-gradient(90deg,transparent 0%,rgba(0,0,0,.35) 22%,#000 46%);mask-image:linear-gradient(90deg,transparent 0%,rgba(0,0,0,.35) 22%,#000 46%)}
+.hero-media{position:absolute;inset:0}
 .hero-media .frame{position:absolute;inset:0;overflow:hidden}
-.hero-media img{width:100%;height:100%;object-fit:cover;object-position:60% 50%;animation:settle 2.4s cubic-bezier(.2,.7,.2,1) both}
-.hero-media::after{content:"";position:absolute;inset:0;background:radial-gradient(120% 90% at 70% 45%,transparent 40%,rgba(9,9,10,.55) 100%),linear-gradient(180deg,rgba(9,9,10,.15),rgba(9,9,10,.35))}
+.hero-media img{width:100%;height:100%;object-fit:cover;object-position:25% 80%;animation:settle 2.4s cubic-bezier(.2,.7,.2,1) both}
+.hero-media::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,rgba(9,9,10,.82) 0%,rgba(9,9,10,.45) 26%,rgba(9,9,10,0) 42%),linear-gradient(180deg,rgba(9,9,10,0) 70%,rgba(9,9,10,.55) 100%)}
 @keyframes settle{from{transform:scale(1.06);filter:brightness(.6)}to{transform:scale(1);filter:brightness(1)}}
-.hero-in{position:relative;z-index:2;display:grid;grid-template-columns:minmax(0,560px) 1fr;min-height:clamp(600px,84vh,880px);align-items:end;padding-block:120px 64px}
-.hero-copy{display:grid;gap:28px}
-.hero h1{font-size:clamp(40px,5.6vw,78px);line-height:1.02;font-weight:300}
+.hero-in{position:relative;z-index:2;display:grid;grid-template-columns:minmax(0,440px) 1fr;min-height:clamp(470px,calc(44vw - 66px),780px);align-items:center;padding-block:48px}
+.hero-copy{display:grid;gap:24px}
+.hero h1{font-size:clamp(32px,3vw,50px);line-height:1.06;font-weight:300}
 .hero-sub{font-size:clamp(16px,1.35vw,18.5px);max-width:46ch;color:var(--fog)}
 .hero-ctas{display:flex;gap:12px;flex-wrap:wrap}
 .hero .anim{animation:rise 1s cubic-bezier(.2,.7,.2,1) both}
@@ -118,8 +118,10 @@ p{margin:0}
 .indicators li:first-child{border-left:0;padding-left:0}
 .indicators svg{width:18px;height:18px;flex:none;stroke:var(--steel)}
 @media (max-width:960px){
-  .hero-media{position:relative;width:100%;height:auto;aspect-ratio:1.15;-webkit-mask-image:linear-gradient(180deg,#000 62%,transparent 100%);mask-image:linear-gradient(180deg,#000 62%,transparent 100%)}
-  .hero-in{grid-template-columns:1fr;min-height:0;padding-block:0 48px;margin-top:-56px}
+  .hero-media{position:relative;inset:auto;width:100%;height:auto;aspect-ratio:1.25;-webkit-mask-image:linear-gradient(180deg,#000 82%,transparent 100%);mask-image:linear-gradient(180deg,#000 82%,transparent 100%)}
+  .hero-media::after{background:none}
+  .hero-media img{object-position:80% 50%}
+  .hero-in{grid-template-columns:1fr;min-height:0;padding-block:0 48px;margin-top:-16px}
   .spot{display:none!important}
   .indicators ul{grid-template-columns:1fr 1fr}
   .indicators li:nth-child(3){border-left:0;padding-left:0}
@@ -132,7 +134,7 @@ section{position:relative}
 .sec-head{display:grid;grid-template-columns:repeat(12,1fr);gap:24px;align-items:end;margin-bottom:clamp(48px,6vw,80px)}
 .sec-head .l{grid-column:1/span 7;display:grid;gap:24px}
 .sec-head .r{grid-column:9/span 4}
-.sec-head h2{font-size:clamp(32px,4.2vw,58px);line-height:1.06}
+.sec-head h2{font-size:clamp(28px,3.5vw,50px);line-height:1.1}
 .sec-head p.lead{font-size:17px;color:var(--fog);max-width:44ch}
 @media (max-width:860px){.sec-head{grid-template-columns:1fr}.sec-head .l,.sec-head .r{grid-column:auto}}
 .reveal{transition:transform 1s cubic-bezier(.2,.7,.2,1)}
@@ -187,7 +189,7 @@ section{position:relative}
 .split .copy{grid-column:9/span 4;display:grid;gap:24px;min-width:0}
 .split.rev .media{grid-column:6/span 7;order:2}
 .split.rev .copy{grid-column:1/span 4;order:1}
-.split h2{font-size:clamp(30px,3.4vw,48px);line-height:1.08}
+.split h2{font-size:clamp(26px,2.9vw,42px);line-height:1.12}
 .split .copy p{color:var(--fog)}
 .media-frame{border:1px solid var(--line);overflow:hidden;position:relative}
 .media-frame img{width:100%;height:auto}
@@ -226,7 +228,6 @@ section{position:relative}
 .paper{background:var(--paper);color:var(--paper-ink)}
 .paper h2,.paper h3{color:var(--paper-ink)}
 .paper .eyebrow{color:var(--paper-mute)}
-.paper .eyebrow::before{background:var(--paper-line)}
 .paper .sec-head p.lead{color:var(--paper-mute)}
 .steps{display:grid;grid-template-columns:repeat(4,1fr);position:relative}
 .steps::before{content:"";position:absolute;left:0;right:0;top:27px;height:1px;background:var(--paper-line)}
@@ -240,6 +241,19 @@ section{position:relative}
 @media (max-width:560px){.steps{grid-template-columns:1fr}}
 .paper-note{margin-top:64px;display:flex;flex-wrap:wrap;gap:12px 40px;padding-top:24px;border-top:1px solid var(--paper-line);font-size:14px;color:var(--paper-mute)}
 .paper-note b{color:var(--paper-ink);font-weight:600}
+
+/* Depoimentos */
+.tsts{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.tst{margin:0;border:1px solid var(--line);background:var(--carbon);padding:32px 28px 28px;display:flex;flex-direction:column;gap:22px;min-width:0;position:relative;transition:border-color .3s}
+.tst:hover{border-color:var(--line-strong)}
+.tst::before{content:"“";position:absolute;right:24px;top:6px;font-family:var(--f-display);font-stretch:125%;font-size:88px;line-height:1;color:var(--line-strong)}
+.tst-k{font-family:var(--f-mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--steel)}
+.tst blockquote{margin:0;flex:1;font-family:var(--f-display);font-stretch:125%;font-weight:300;font-size:clamp(17px,1.35vw,20px);line-height:1.45;color:var(--white)}
+.tst figcaption{display:flex;align-items:center;gap:14px;border-top:1px solid var(--line);padding-top:18px}
+.tst-av{width:40px;height:40px;border-radius:50%;border:1px dashed var(--line-strong);flex:none}
+.tst figcaption b{display:block;font-weight:500;color:var(--white);font-size:14.5px}
+.tst figcaption small{display:block;color:var(--steel);font-size:13px}
+@media (max-width:960px){.tsts{grid-template-columns:1fr}}
 
 /* Cases */
 .cases{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
@@ -262,7 +276,7 @@ section{position:relative}
 .cta-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:24px}
 .cta-grid .l{grid-column:1/span 5;display:grid;gap:28px;align-content:start}
 .cta-grid .r{grid-column:7/span 6;min-width:0}
-.cta-grid h2{font-size:clamp(34px,4.4vw,60px);line-height:1.04}
+.cta-grid h2{font-size:clamp(30px,3.6vw,52px);line-height:1.08}
 .contact-lines{display:grid;gap:4px;font-size:15px;border-top:1px solid var(--line);padding-top:24px}
 .contact-lines span{font-family:var(--f-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--steel)}
 form{display:grid;grid-template-columns:1fr 1fr;gap:20px 20px;border:1px solid var(--line);padding:clamp(22px,3vw,36px);background:rgba(17,17,19,.7)}
@@ -316,9 +330,8 @@ footer{border-top:1px solid var(--line);padding-block:56px 40px}
     <ul class="nav-links">
       <li><a href="#produtos">Produtos</a></li>
       <li><a href="#solucoes">Soluções</a></li>
-      <li><a href="#por-que">Por que 5Set</a></li>
       <li><a href="#como-funciona">Como funciona</a></li>
-      <li><a href="#cases">Cases</a></li>
+      <li><a href="#depoimentos">Depoimentos</a></li>
     </ul>
     <a class="btn btn-solid nav-cta" href="#contato">Falar com especialista <span class="arr">→</span></a>
     <button class="burger" id="burger" aria-label="Abrir menu" aria-expanded="false" aria-controls="mmenu"><span></span><span></span></button>
@@ -328,9 +341,8 @@ footer{border-top:1px solid var(--line);padding-block:56px 40px}
       <ul>
         <li><a href="#produtos">Produtos <span>02</span></a></li>
         <li><a href="#solucoes">Soluções <span>04</span></a></li>
-        <li><a href="#por-que">Por que 5Set <span>05</span></a></li>
         <li><a href="#como-funciona">Como funciona <span>06</span></a></li>
-        <li><a href="#cases">Cases <span>07</span></a></li>
+        <li><a href="#depoimentos">Depoimentos <span>07</span></a></li>
       </ul>
       <a class="btn btn-solid" href="#contato">Falar com especialista <span class="arr">→</span></a>
     </div>
@@ -341,15 +353,17 @@ footer{border-top:1px solid var(--line);padding-block:56px 40px}
 <!-- HERO -->
 <section class="hero">
   <div class="hero-media">
-    <div class="frame"><img src="/brindes/img/hero-kits.jpg" alt="Dois kits premium 5Set em maletas pretas: manta, copo térmico com canudo, chaveiro, álcool spray, camiseta e garrafa de vidro com revestimento emborrachado"></div>
-    <div class="spot" data-x=".30" data-y=".50"><i></i><b>Copo térmico 900 ml</b></div>
-    <div class="spot" data-x=".66" data-y=".50"><i></i><b>Camiseta premium</b></div>
-    <div class="spot" data-x=".82" data-y=".40"><i></i><b>Garrafa de vidro 750 ml</b></div>
-    <div class="spot" data-x=".8975" data-y=".64"><i></i><b>Chaveiro premium</b></div>
+    <div class="frame"><img src="/brindes/img/hero-linha-2.jpg" alt="Linha 5Set sobre pedra escura: boné, garrafa térmica, copo térmico, chaveiro, camiseta, nécessaire e caixa magnética"></div>
+    <div class="spot" data-x=".45" data-y=".59"><i></i><b>Boné</b></div>
+    <div class="spot" data-x=".58" data-y=".42"><i></i><b>Garrafa térmica</b></div>
+    <div class="spot" data-x=".65" data-y=".56"><i></i><b>Copo térmico</b></div>
+    <div class="spot" data-x=".81" data-y=".34"><i></i><b>Caixa magnética</b></div>
+    <div class="spot" data-x=".87" data-y=".59"><i></i><b>Nécessaire</b></div>
+    <div class="spot" data-x=".54" data-y=".79"><i></i><b>Chaveiro</b></div>
   </div>
   <div class="wrap hero-in">
     <div class="hero-copy">
-      <div class="eyebrow anim">5Set Corporate · Brindes premium</div>
+      <div class="eyebrow anim">Quinto Set Corporate · Brindes premium</div>
       <h1 class="anim">Brindes que <span class="metal">elevam a percepção</span> da sua marca.</h1>
       <p class="hero-sub anim">Produtos premium, tecnologia e personalização para transformar cada entrega em uma experiência de marca.</p>
       <div class="hero-ctas anim">
@@ -373,7 +387,7 @@ footer{border-top:1px solid var(--line);padding-block:56px 40px}
   <div class="wrap">
     <div class="sec-head">
       <div class="l reveal">
-        <div class="eyebrow">01 — Conceito</div>
+        <div class="eyebrow">Conceito</div>
         <h2 id="t-conceito">Não é apenas um brinde. É uma extensão da sua marca.</h2>
       </div>
       <div class="r reveal"><p class="lead">Quando qualidade, design e funcionalidade se encontram, o presente deixa de ser apenas um objeto e passa a fazer parte da experiência da sua marca.</p></div>
@@ -408,8 +422,8 @@ footer{border-top:1px solid var(--line);padding-block:56px 40px}
 </section>
 
 <div class="mq" aria-hidden="true"><div class="mq-track">
-  <span>Win the mind game</span><span>Onboarding</span><span>Clientes estratégicos</span><span>Fim de ano</span><span>Convenções</span><span>Premiação</span>
-  <span>Win the mind game</span><span>Onboarding</span><span>Clientes estratégicos</span><span>Fim de ano</span><span>Convenções</span><span>Premiação</span>
+  <span>Onboarding</span><span>Clientes estratégicos</span><span>Fim de ano</span><span>Convenções</span><span>Premiação</span>
+  <span>Onboarding</span><span>Clientes estratégicos</span><span>Fim de ano</span><span>Convenções</span><span>Premiação</span>
 </div></div>
 
 <!-- 02 PRODUTOS -->
@@ -417,7 +431,7 @@ footer{border-top:1px solid var(--line);padding-block:56px 40px}
   <div class="wrap">
     <div class="sec-head">
       <div class="l reveal">
-        <div class="eyebrow">02 — Produtos</div>
+        <div class="eyebrow">Produtos</div>
         <h2 id="t-produtos">Produtos que as pessoas realmente querem receber.</h2>
       </div>
       <div class="r reveal"><p class="lead">Uma seleção de produtos premium para diferentes momentos, campanhas e experiências corporativas.</p></div>
@@ -425,45 +439,43 @@ footer{border-top:1px solid var(--line);padding-block:56px 40px}
 
     <div class="bento">
       <article class="tile t-kits reveal">
-        <div class="ph"><img src="/brindes/img/kit-01.jpg" alt="Kit Experiência Completa em maleta preta com espuma: manta, copo térmico, chaveiro, álcool spray e camiseta"></div>
+        <div class="ph"><img src="/brindes/img/prod-kit.jpg" alt="Caixa magnética 5Set aberta com camiseta, copo térmico, garrafa, chaveiro de couro, caixa menor e manta com cinta"></div>
         <div class="meta">
-          <div class="row"><h3>Kits Premium</h3><span class="tag">2 composições base</span></div>
+          <div class="row"><h3>Kits Premium</h3></div>
           <p>Kits completos para onboarding, clientes estratégicos e datas comemorativas, entregues em maleta rígida com espuma moldada.</p>
           <div class="kit-list"><span>Manta de viagem</span><span>Copo térmico</span><span>Chaveiro</span><span>Camiseta premium</span><span>Álcool spray 70%</span></div>
         </div>
       </article>
 
       <article class="tile t-garrafas reveal">
-        <div class="ph"><img src="/brindes/img/garrafas.jpg" alt="Linha de sete garrafas e copos térmicos 5Set em preto, inox e vidro"></div>
-        <div class="specs" aria-label="Modelos e capacidades">
-          <span><b>750 ml</b>Preta fosca</span><span><b>750 ml</b>Preta inox</span><span><b>750 ml</b>Inox escovado</span><span><b>750 ml</b>Esportiva</span><span><b>900 ml</b>Copo 01</span><span><b>900 ml</b>Copo 02</span><span><b>750 ml</b>Vidro</span>
-        </div>
+        <div class="ph"><img src="/brindes/img/prod-garrafas.jpg" alt="Cinco garrafas e copos térmicos 5Set em preto, inox e vidro com capa, sobre degraus de pedra"></div>
         <div class="meta">
-          <div class="row"><h3>Garrafas térmicas</h3><span class="tag">7 modelos</span></div>
+          <div class="row"><h3>Garrafas térmicas</h3></div>
           <p>Design, funcionalidade e identidade para acompanhar a rotina de quem recebe.</p>
+          <div class="kit-list" aria-label="Modelos e capacidades"><span>Preta fosca · 750 ml</span><span>Preta inox · 750 ml</span><span>Inox escovado · 750 ml</span><span>Esportiva · 750 ml</span><span>Copo 01 · 900 ml</span><span>Copo 02 · 900 ml</span><span>Vidro · 750 ml</span></div>
         </div>
       </article>
 
       <article class="tile t-manta reveal">
-        <div class="ph"><img src="/brindes/img/manta.jpg" alt="Manta preta dobrada com o 5 metálico e a frase Win the mind game"></div>
+        <div class="ph"><img src="/brindes/img/prod-manta.jpg" alt="Manta preta 5Set dobrada com cinta de papel e etiqueta bordada"></div>
         <div class="meta">
-          <div class="row"><h3>Mantas</h3><span class="tag">Viagem · descanso</span></div>
+          <div class="row"><h3>Mantas</h3></div>
           <p>Leve, compacta e fácil de transportar. Conforto com a identidade da marca.</p>
         </div>
       </article>
 
       <article class="tile t-chave reveal">
-        <div class="ph"><img src="/brindes/img/chaveiros.jpg" alt="Três chaveiros pretos 5Set: placa metálica, fita com mosquetão e placa fina gravada"></div>
+        <div class="ph"><img src="/brindes/img/prod-chaveiros.jpg" alt="Três chaveiros 5Set: placa de metal escovado, alça de couro com logo em baixo-relevo e barra metálica gravada"></div>
         <div class="meta">
-          <div class="row"><h3>Chaveiros</h3><span class="tag">8 opções</span></div>
+          <div class="row"><h3>Chaveiros</h3></div>
           <p>Metal, couro e fita técnica com a logo aplicada de forma discreta. Cada um segue em embalagem própria.</p>
         </div>
       </article>
 
       <article class="tile t-vest reveal">
-        <div class="ph"><img src="/brindes/img/camiseta.jpg" alt="Camiseta e shorts pretos 5Set sobre fundo cinza" style="object-position:50% 40%"></div>
+        <div class="ph"><img src="/brindes/img/prod-vestuario.jpg" alt="Camiseta, jaqueta e shorts pretos 5Set, com a frase Win the mind game na barra"></div>
         <div class="meta">
-          <div class="row"><h3>Vestuário premium</h3><span class="tag">DNA de moda</span></div>
+          <div class="row"><h3>Vestuário premium</h3></div>
           <p>Camisetas, jaquetas e conjuntos da linha 5Set, com caimento e acabamento de marca de moda.</p>
         </div>
       </article>
@@ -476,13 +488,13 @@ footer{border-top:1px solid var(--line);padding-block:56px 40px}
   <div class="wrap">
     <div class="split">
       <div class="media reveal">
-        <div class="media-frame"><img src="/brindes/img/embalagem.jpg" alt="Embalagens 5Set: caixa magnética cinza com papel de seda timbrado, caixas rígidas e sachês com frente translúcida"></div>
+        <div class="media-frame"><img src="/brindes/img/unboxing.jpg" alt="Unboxing 5Set: caixa magnética preta aberta com papel de seda timbrado e selo, caixa fechada com logo em baixo-relevo, camiseta, chaveiro de couro e sachê zip"></div>
         <div class="caption-bar"><span>Caixa magnética · papel de seda · sachê zip</span><span>03</span></div>
       </div>
       <div class="copy reveal">
-        <div class="eyebrow">03 — Unboxing</div>
+        <div class="eyebrow">Unboxing</div>
         <h2 id="t-unbox">A experiência começa antes de abrir a caixa.</h2>
-        <p>Cada entrega pode sair com a identidade da sua empresa ao lado da assinatura 5Set, do lacre ao papel que envolve o produto.</p>
+        <p>Cada entrega pode sair com a identidade da sua empresa, do lacre ao papel que envolve o produto.</p>
         <ul class="feat">
           <li><span>Logotipo</span><em>Baixo-relevo na tampa da caixa</em></li>
           <li><span>Papel de seda</span><em>Preto, timbrado com a marca</em></li>
@@ -499,7 +511,7 @@ footer{border-top:1px solid var(--line);padding-block:56px 40px}
   <div class="wrap">
     <div class="sec-head">
       <div class="l reveal">
-        <div class="eyebrow">04 — Soluções</div>
+        <div class="eyebrow">Soluções</div>
         <h2 id="t-sol">Um projeto para cada momento da sua empresa.</h2>
       </div>
       <div class="r reveal"><p class="lead">Partimos da ocasião e de quem vai receber. O kit vem depois.</p></div>
@@ -515,43 +527,12 @@ footer{border-top:1px solid var(--line);padding-block:56px 40px}
   </div>
 </section>
 
-<!-- 05 POR QUE 5SET -->
-<section class="sec" id="por-que" style="border-top:1px solid var(--line)" aria-labelledby="t-porque">
-  <div class="wrap">
-    <div class="split rev" style="margin-bottom:clamp(64px,8vw,110px)">
-      <div class="media reveal">
-        <div class="media-frame"><img src="/brindes/img/detalhe.jpg" alt="Barra de camiseta preta com a frase Win the mind game aplicada na parte interna"></div>
-        <div class="caption-bar"><span>Signature detail · barra interna</span><span>05</span></div>
-      </div>
-      <div class="copy reveal">
-        <div class="eyebrow">05 — Por que 5Set</div>
-        <h2 id="t-porque">Uma marca de moda por trás de cada brinde.</h2>
-        <p>A 5Set nasceu no vestuário premium. Trazemos para o corporativo o mesmo rigor de corte, material e acabamento, e o hábito de esconder um detalhe que só o dono descobre.</p>
-        <p class="quote">Sua mensagem pode ir na barra interna, como o nosso “Win the mind game”.</p>
-      </div>
-    </div>
-
-    <div class="compare reveal" role="region" aria-label="Comparação entre brinde genérico e 5Set" tabindex="0">
-      <table>
-        <thead><tr><th scope="col">Critério</th><th scope="col">Brinde genérico</th><th scope="col" class="us">5Set</th></tr></thead>
-        <tbody>
-          <tr><td>Origem</td><td class="gen">Catálogo de fornecedor, item padrão</td><td class="us">Marca de moda premium com linha própria</td></tr>
-          <tr><td>Destino</td><td class="gen">Gaveta, descarte</td><td class="us">Rotina: mesa, academia, viagem</td></tr>
-          <tr><td>Personalização</td><td class="gen">Logo grande carimbado</td><td class="us">Aplicação discreta, baixo-relevo, mensagem interna</td></tr>
-          <tr><td>Embalagem</td><td class="gen">Saco plástico</td><td class="us">Caixa magnética, papel de seda timbrado, maleta</td></tr>
-          <tr><td>Percepção</td><td class="gen">“Mais um brinde”</td><td class="us">Um produto que a empresa escolheu para representar sua marca</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-</section>
-
 <!-- 06 COMO FUNCIONA -->
 <section class="sec paper" id="como-funciona" aria-labelledby="t-como">
   <div class="wrap">
     <div class="sec-head">
       <div class="l reveal">
-        <div class="eyebrow">06 — Como funciona</div>
+        <div class="eyebrow">Como funciona</div>
         <h2 id="t-como">Do briefing à entrega, um processo só.</h2>
       </div>
       <div class="r reveal"><p class="lead">Um especialista acompanha o projeto do início ao fim. Você aprova cada etapa antes da produção.</p></div>
@@ -570,46 +551,34 @@ footer{border-top:1px solid var(--line);padding-block:56px 40px}
   </div>
 </section>
 
-<!-- 07 CASES -->
-<section class="sec" id="cases" aria-labelledby="t-cases">
+<!-- 07 DEPOIMENTOS -->
+<section class="sec" id="depoimentos" aria-labelledby="t-dep">
   <div class="wrap">
     <div class="sec-head">
       <div class="l reveal">
-        <div class="eyebrow">07 — Cases</div>
-        <h2 id="t-cases">Como os projetos ganham forma.</h2>
+        <div class="eyebrow">Depoimentos</div>
+        <h2 id="t-dep">O que os clientes dizem sobre o nosso produto.</h2>
       </div>
-      <div class="r reveal"><p class="lead">Três formatos que mostram como uma ocasião vira um kit.</p></div>
+      <div class="r reveal"><p class="lead">Empresas que transformaram seus brindes em experiência de marca.</p></div>
     </div>
-    <div class="cases">
-      <article class="case reveal">
-        <div class="ph"><img src="/brindes/img/kit-02.jpg" alt="Kit Essencial e Sofisticado em maleta: camiseta, garrafa de vidro e chaveiro"></div>
-        <div class="body">
-          <span class="k">Onboarding</span>
-          <h3>Boas-vindas que viram uniforme do dia a dia</h3>
-          <p>Kit enviado para a casa de cada novo colaborador antes do primeiro dia.</p>
-          <dl><dt>Kit</dt><dd>Camiseta, garrafa de vidro, chaveiro</dd><dt>Embalagem</dt><dd>Maleta com espuma moldada</dd></dl>
-        </div>
-      </article>
-      <article class="case reveal">
-        <div class="ph"><img src="/brindes/img/manta-aviao.jpg" alt="Manta 5Set sobre poltrona de avião"></div>
-        <div class="body">
-          <span class="k">Convenção de vendas</span>
-          <h3>Um kit para a viagem até o evento</h3>
-          <p>Itens pensados para o deslocamento e para o uso depois do evento.</p>
-          <dl><dt>Kit</dt><dd>Manta, copo térmico 900 ml, álcool spray</dd><dt>Embalagem</dt><dd>Caixa magnética com papel de seda</dd></dl>
-        </div>
-      </article>
-      <article class="case reveal">
-        <div class="ph"><img src="/brindes/img/tubo.jpg" alt="Camiseta premium 5Set embalada em tubo transparente com tampa preta"></div>
-        <div class="body">
-          <span class="k">Clientes estratégicos</span>
-          <h3>Presente de fim de ano com mensagem interna</h3>
-          <p>Camiseta premium com a frase da campanha aplicada na barra, entregue em tubo.</p>
-          <dl><dt>Kit</dt><dd>Camiseta premium personalizada</dd><dt>Embalagem</dt><dd>Tubo transparente com tampa gravada</dd></dl>
-        </div>
-      </article>
+    <div class="tsts">
+      <figure class="tst reveal">
+        <span class="tst-k">Onboarding</span>
+        <blockquote>“[Depoimento do cliente: o que ele achou do kit, da personalização e da reação de quem recebeu.]”</blockquote>
+        <figcaption><span class="tst-av" aria-hidden="true"></span><span><b>[Nome do cliente]</b><small>[Cargo] · [Empresa]</small></span></figcaption>
+      </figure>
+      <figure class="tst reveal">
+        <span class="tst-k">Clientes estratégicos</span>
+        <blockquote>“[Depoimento do cliente: o que ele achou do kit, da personalização e da reação de quem recebeu.]”</blockquote>
+        <figcaption><span class="tst-av" aria-hidden="true"></span><span><b>[Nome do cliente]</b><small>[Cargo] · [Empresa]</small></span></figcaption>
+      </figure>
+      <figure class="tst reveal">
+        <span class="tst-k">Convenção de vendas</span>
+        <blockquote>“[Depoimento do cliente: o que ele achou do kit, da personalização e da reação de quem recebeu.]”</blockquote>
+        <figcaption><span class="tst-av" aria-hidden="true"></span><span><b>[Nome do cliente]</b><small>[Cargo] · [Empresa]</small></span></figcaption>
+      </figure>
     </div>
-    <p class="cases-note">Composições de referência. Os cases com clientes entram aqui conforme forem publicados.</p>
+    <p class="cases-note">Modelo de seção: substitua os campos entre colchetes por depoimentos reais, com autorização de cada cliente.</p>
   </div>
 </section>
 
@@ -620,10 +589,6 @@ footer{border-top:1px solid var(--line);padding-block:56px 40px}
       <div class="eyebrow">Criar meu projeto</div>
       <h2 id="t-cta">Vamos transformar o seu brinde em <span class="metal">experiência de marca.</span></h2>
       <p>Conte a ocasião e o volume. Um especialista retorna com uma proposta de curadoria, personalização e embalagem.</p>
-      <div class="contact-lines">
-        <span>Site</span>
-        <p>5set.com.br</p>
-      </div>
     </div>
     <div class="r reveal">
       <form id="lead" name="lead" method="POST" data-netlify="true" novalidate>
@@ -668,7 +633,7 @@ footer{border-top:1px solid var(--line);padding-block:56px 40px}
         <p>Brindes corporativos premium, tecnológicos e personalizados. Divisão B2B da 5Set.</p>
       </div>
       <nav aria-label="Produtos"><h4>Produtos</h4><a href="#produtos">Kits premium</a><a href="#produtos">Garrafas térmicas</a><a href="#produtos">Mantas</a><a href="#produtos">Chaveiros</a><a href="#produtos">Vestuário</a></nav>
-      <nav aria-label="Empresa"><h4>Empresa</h4><a href="#por-que">Por que 5Set</a><a href="#como-funciona">Como funciona</a><a href="#cases">Cases</a></nav>
+      <nav aria-label="Empresa"><h4>Empresa</h4><a href="#como-funciona">Como funciona</a><a href="#depoimentos">Depoimentos</a></nav>
       <nav aria-label="Contato"><h4>Contato</h4><a href="#contato">Criar meu projeto</a><a href="#contato">Falar com especialista</a></nav>
     </div>
     <div class="legal"><span>© 2026 5Set</span><span>Win the mind game</span></div>
@@ -691,11 +656,11 @@ footer{border-top:1px solid var(--line);padding-block:56px 40px}
   var media=document.querySelector('.hero-media'), himg=media.querySelector('img'), spots=[].slice.call(media.querySelectorAll('.spot'));
   function place(){
     var W=media.clientWidth,H=media.clientHeight,iw=himg.naturalWidth,ih=himg.naturalHeight; if(!iw||!W) return;
-    var sc=Math.max(W/iw,H/ih), rw=iw*sc, rh=ih*sc, ox=(W-rw)*0.6, oy=(H-rh)*0.5;
+    var sc=Math.max(W/iw,H/ih), rw=iw*sc, rh=ih*sc, ox=(W-rw)*0.25, oy=(H-rh)*0.8;
     spots.forEach(function(sp){
       var x=ox+parseFloat(sp.dataset.x)*rw, y=oy+parseFloat(sp.dataset.y)*rh;
       sp.style.left=x+'px'; sp.style.top=y+'px';
-      sp.classList.toggle('off', x<W*0.36||x>W-12||y<40||y>H-40);
+      sp.classList.toggle('off', x<W*0.40||x>W-12||y<40||y>H-40);
       sp.classList.toggle('flip', x>W*0.72);
     });
   }
