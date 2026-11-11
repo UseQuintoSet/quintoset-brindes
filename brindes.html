@@ -601,13 +601,13 @@ footer{border-top:1px solid var(--line);padding-block:56px 40px}
       <p>Conte a ocasião e o volume. Um especialista retorna com uma proposta de curadoria, personalização e embalagem.</p>
     </div>
     <div class="r reveal">
-      <form id="lead" name="lead" method="POST" data-netlify="true" novalidate>
+      <form id="lead" name="lead" method="POST" data-netlify="true" autocomplete="off" novalidate>
         <input type="hidden" name="form-name" value="lead">
         <input type="hidden" name="subject" value="Novo briefing de brindes (%{submissionId})">
-        <div class="field"><label for="f-nome">Nome</label><input id="f-nome" name="nome" autocomplete="name" required></div>
-        <div class="field"><label for="f-empresa">Empresa</label><input id="f-empresa" name="empresa" autocomplete="organization" required></div>
-        <div class="field"><label for="f-email">E-mail corporativo</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
-        <div class="field"><label for="f-tel">Telefone</label><input id="f-tel" name="tel" type="tel" autocomplete="tel"></div>
+        <div class="field"><label for="f-nome">Nome</label><input id="f-nome" name="nome" required></div>
+        <div class="field"><label for="f-empresa">Empresa</label><input id="f-empresa" name="empresa" required></div>
+        <div class="field"><label for="f-email">E-mail corporativo</label><input id="f-email" name="email" type="email" required></div>
+        <div class="field"><label for="f-cel">Celular</label><input id="f-cel" name="celular" type="tel"></div>
         <div class="field full">
           <label id="l-ocasiao">Ocasião</label>
           <div class="chips" role="group" aria-labelledby="l-ocasiao">
@@ -697,6 +697,17 @@ footer{border-top:1px solid var(--line);padding-block:56px 40px}
 
   // Form
   var form=document.getElementById('lead'), err=document.getElementById('err');
+  // Celular: formats as (11) 91234-5678 while typing. Drops a leading 0 and a pasted +55.
+  // ponytail: caret jumps to the end when editing mid-number, track selectionStart if it bothers anyone.
+  function maskCel(v){
+    var d=v.replace(/\D/g,'').replace(/^0+/,'');
+    if(d.length>12&&d.slice(0,2)==='55') d=d.slice(2);
+    d=d.slice(0,11);
+    if(d.length<3) return d?'('+d:'';
+    if(d.length<8) return '('+d.slice(0,2)+') '+d.slice(2);
+    return '('+d.slice(0,2)+') '+d.slice(2,7)+'-'+d.slice(7);
+  }
+  form.celular.addEventListener('input',function(){ this.value=maskCel(this.value); });
   form.addEventListener('submit',function(e){
     e.preventDefault();
     var missing=[];
@@ -707,6 +718,8 @@ footer{border-top:1px solid var(--line);padding-block:56px 40px}
     err.hidden=true;
     var name=form.nome.value.trim().split(' ')[0], btn=form.querySelector('button[type=submit]');
     btn.disabled=true;
+    // Email subject carries the company. The hidden input's static value is the fallback.
+    form.subject.value='Novo briefing de brindes: '+form.empresa.value.trim()+' (%{submissionId})';
     // Netlify Forms picks up the POST to this page's path (needs the hidden form-name field). Not "/", which redirects.
     fetch(location.pathname,{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(new FormData(form)).toString()})
       .then(function(r){
